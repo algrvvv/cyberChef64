@@ -5,11 +5,14 @@ cmake_minimum_required (VERSION 3.8)
 
 project ("utility01")
 
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/getopt/)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/base64_cpp-master/)
+
+set(SRC_FILES utility01.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/getopt/getopt.c
+  ${CMAKE_CURRENT_SOURCE_DIR}/getopt/getopt_long.c
+  ${CMAKE_CURRENT_SOURCE_DIR}/base64_cpp-master/base64.cpp)
+
 # Добавьте источник в исполняемый файл этого проекта.
-add_executable (utility01 "utility01.cpp" "utility01.h")
+add_executable (utility01 ${SRC_FILES})
 
-if (CMAKE_VERSION VERSION_GREATER 3.12)
-  set_property(TARGET utility01 PROPERTY CXX_STANDARD 20)
-endif()
-
-# TODO: Добавьте тесты и целевые объекты, если это необходимо.

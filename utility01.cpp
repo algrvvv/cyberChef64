@@ -3,8 +3,8 @@
 
 #include "utility01.h"
 #include "iostream"
-#include "base64_cpp-master/base64.cpp"
-//#include "getopt-master/getopt.c"
+#include <base64.h>
+#include "getopt/getopt.h"
 
 using namespace std;
 
@@ -49,7 +49,10 @@ int main(int argc, char* argv[])
 {
 	setlocale(LC_ALL, "RU");
 
-	/*for (;;)
+	int c;
+    int option_index = 0;
+
+	for (;;)
 	{
 		switch (getopt(argc, argv, "de:h")) {
 		case 'a':
@@ -68,7 +71,7 @@ int main(int argc, char* argv[])
 		case -1:
 			break;
 		}
-	}*/
+	}
 
 	string param;
 	string str;

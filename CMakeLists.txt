@@ -16,3 +16,7 @@ set(SRC_FILES utility01.cpp
 # Добавьте источник в исполняемый файл этого проекта.
 add_executable (utility01 ${SRC_FILES})
 
+add_library(mylib utility01.cpp)
+target_link_libraries(utility01 PRIVATE mylib)
+
+

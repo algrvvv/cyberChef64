@@ -16,17 +16,13 @@ void decode(string str) {
 
 void encode(string str) {
 	Base64 encode_str(optarg, Base64::TextEncode);
-		cout << "\n" << "Заширофанное сообщение: " << "\n";
+	cout << "\n" << "Заширофанное сообщение: " << "\n";
 	cout << encode_str.encode() << "\n";
-	}
 }
 
 int main(int argc, char* argv[])
 {
 	setlocale(LC_ALL, "RU");
-
-	int c;
-    int option_index = 0;
 
 	for (;;)
 	{
@@ -47,18 +43,13 @@ int main(int argc, char* argv[])
 		default:
 			cout << "\n" << "WELCOME TO 'utility01'!\nUsing:\n-d \"your str for decode\"\n-e \"your str for encode\"\n-v - version application" << "\n";
 			break;
-
 		case -1:
 			cout << "\nИспользуйте -h\n";
 			break;
 		}
 		break;
-		}
-		//cout << param << "\n" << str;
-		solution(param, str);
-	}	
+	}
 }
-
 
 //ЗОНА КОММЕНТАРИЕВ
 
